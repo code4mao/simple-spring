@@ -29,6 +29,6 @@ public class SimpleAOPTest {
         HelloService helloServiceImplProxy = (HelloService) SimpleAOP.getProxy(helloServiceImpl, beforeAdvice);
         System.out.println(helloServiceImplProxy);
 
-        helloServiceImplProxy.sayHalloWorld();
+        helloServiceImplProxy.sayHelloWorld();
     }
 }

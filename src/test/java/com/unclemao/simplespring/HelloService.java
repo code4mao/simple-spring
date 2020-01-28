@@ -8,5 +8,5 @@ package com.unclemao.simplespring;
  * @since 2020-01-28 15:22
  */
 public interface HelloService {
-    void sayHalloWorld();
+    void sayHelloWorld();
 }

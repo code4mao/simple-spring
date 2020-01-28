@@ -9,7 +9,7 @@ package com.unclemao.simplespring;
  */
 public class HelloServiceImpl implements HelloService {
     @Override
-    public void sayHalloWorld() {
+    public void sayHelloWorld() {
         System.out.println("Hello world!");
     }
 }
