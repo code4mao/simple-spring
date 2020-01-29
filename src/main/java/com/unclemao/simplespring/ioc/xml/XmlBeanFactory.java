@@ -112,7 +112,7 @@ public class XmlBeanFactory implements BeanFactory {
     }
 
     public void registerBeanPostProcessor() throws Exception {
-        List<Object> beans = getBeansForType(BeanPostProcessor.class);
+        List beans = getBeansForType(BeanPostProcessor.class);
         for (Object bean : beans) {
             addBeanPostProcessor((BeanPostProcessor) bean);
         }
@@ -122,8 +122,8 @@ public class XmlBeanFactory implements BeanFactory {
         beanPostProcessors.add(beanPostProcessor);
     }
 
-    public List<Object> getBeansForType(Class type) throws Exception {
-        List<Object> beans = new ArrayList<>();
+    public List getBeansForType(Class type) throws Exception {
+        List beans = new ArrayList<>();
         for (String beanDefinitionName : beanDefinitionNames) {
             if (type.isAssignableFrom(beanDefinitionMap.get(beanDefinitionName).getBeanClass())) {
                 beans.add(getBean(beanDefinitionName));

@@ -1,7 +1,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans">
   <bean id="wheel" class="com.unclemao.simplespring.Wheel">
-    <property name="brand" value="Michelin" />
-    <property name="specification" value="265/60 R18" />
+    <property name="brand" value="Michelin"/>
+    <property name="specification" value="265/60 R18"/>
   </bean>
 
   <bean id="car" class="com.unclemao.simplespring.Car">
@@ -13,4 +13,13 @@
   </bean>
 
   <bean id="helloService" class="com.unclemao.simplespring.HelloServiceImpl"/>
+
+  <bean id="logInterceptor" class="com.unclemao.simplespring.aop.LogInterceptor"/>
+
+  <bean id="autoProxyCreator" class="com.unclemao.simplespring.aop.AspectJAwareAdvisorAutoProxyCreator"/>
+
+  <bean id="helloServiceAspect" class="com.unclemao.simplespring.aop.AspectJExpressionPointcutAdvisor">
+    <property name="advice" ref="logInterceptor"/>
+    <property name="expression" value="execution(* com.unclemao.simplespring.HelloService.*(..))"/>
+  </bean>
 </beans>
