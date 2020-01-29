@@ -20,14 +20,17 @@ public class SimpleAOPTest {
 
         HelloServiceImpl helloServiceImpl = new HelloServiceImpl();
         System.out.println(helloServiceImpl);
+        System.out.println(helloServiceImpl.getClass().getCanonicalName());
 
         //创建一个Advice
         Advice beforeAdvice = new BeforeAdvice(helloServiceImpl, logTask);
         System.out.println(beforeAdvice);
+        System.out.println(beforeAdvice.getClass().getCanonicalName());
 
         // 为目标对象生成代理
         HelloService helloServiceImplProxy = (HelloService) SimpleAOP.getProxy(helloServiceImpl, beforeAdvice);
         System.out.println(helloServiceImplProxy);
+        System.out.println(helloServiceImplProxy.getClass().getName());
 
         helloServiceImplProxy.sayHelloWorld();
     }
